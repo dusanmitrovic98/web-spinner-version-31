@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #0b1e27;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .spinner-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .spinner {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: spin 3s linear infinite;
+        }
+
+        .bar {
+            width: 10px;
+            height: 50px;
+            background: #ff5733;
+            /* Change the color as desired */
+            position: absolute;
+            animation: rotateBars 2s ease-in-out infinite, colorChange 2s linear infinite;
+            transform-origin: center;
+        }
+
+        .bar:nth-child(2) {
+            transform: rotate(45deg);
+            animation-delay: 0.2s;
+        }
+
+        .bar:nth-child(3) {
+            transform: rotate(90deg);
+            animation-delay: 0.4s;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateBars {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes colorChange {
+
+            0%,
+            100% {
+                background: #ff5733;
+            }
+
+            50% {
+                background: #33ff57;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spinner-container">
+        <div class="spinner">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+</body>
+
+</html>
